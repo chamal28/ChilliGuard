@@ -1,0 +1,47 @@
+/* REGISTER.CSS - Registration page specific styles */
+
+/* Re-use login.css styles, just add registration-specific overrides */
+
+.register-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8fffa 0%, #d4edda 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.register-card {
+    border-radius: 24px !important;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+}
+
+.register-card .form-control {
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid #e2e8f0;
+    transition: border-color 0.3s ease;
+}
+
+.register-card .form-control:focus {
+    border-color: #2d6a4f;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+.register-card .btn-success {
+    border-radius: 12px;
+    padding: 0.75rem;
+    background: #2d6a4f;
+    border-color: #2d6a4f;
+}
+
+.register-card .btn-success:hover {
+    background: #1e4d3a;
+    border-color: #1e4d3a;
+}
+
+.register-card a {
+    color: #2d6a4f;
+    font-weight: 600;
+}

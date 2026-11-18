@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChilliGuard · Register</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/register.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/auth-modern.css" />
+    <link rel="stylesheet" href="../css/auth-icons.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+</head>
+<body class="auth-page">
+    <div class="register-wrapper">
+        <aside class="auth-showcase" data-auth-carousel>
+            <div class="auth-carousel" aria-label="Nai Miris crop photographs">
+                <div class="auth-slide is-active"><img src="../assets/nai-miris-poly-tunnel-01.png" alt="Nai Miris chilli fruits on leaves"></div>
+                <div class="auth-slide"><img src="../assets/nai-miris-poly-tunnel-02.png" alt="Nai Miris chilli plants with green, yellow and red fruits"></div>
+                <div class="auth-slide"><img src="../assets/nai-miris-poly-tunnel-03.png" alt="Fresh green and red Nai Miris chilli fruits"></div>
+            </div>
+            <div class="auth-carousel-dots" aria-label="Choose hero image">
+                <button type="button" class="is-active" aria-label="Show image 1"></button>
+                <button type="button" aria-label="Show image 2"></button>
+                <button type="button" aria-label="Show image 3"></button>
+            </div>
+            <a class="auth-brand" href="../index.html"><span><i class="fas fa-leaf"></i></span> ChilliGuard</a>
+            <div class="auth-showcase-copy">
+                <span class="auth-kicker">SMART NAI MIRIS CROP SUPPORT</span>
+                <h2>Start protecting your chilli crop</h2>
+                <p>Create your farmer account to analyse leaf images and keep your detection activity organised.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Simple image upload workflow</li><li><i class="fas fa-check-circle"></i>Disease confidence and stage results</li><li><i class="fas fa-check-circle"></i>Your own detection history</li>
+                </ul>
+            </div>
+            <div class="auth-showcase-footer">AI predictions are decision-support information. Confirm crop-specific action with a local agricultural professional.</div>
+        </aside>
+        <div class="container">
+            <div class="row justify-content-center align-items-center min-vh-100">
+                <div class="col-lg-6 col-md-8 col-11">
+                    <div class="card register-card shadow-lg border-0">
+                        <div class="card-body p-4 p-md-5">
+                            <div class="text-center mb-4">
+                                <h1 class="brand-name">
+                                    <i class="fas fa-leaf text-success me-2"></i>ChilliGuard
+                                </h1>
+                                <p class="brand-tagline">Create Your Account</p>
+                            </div>
+                            <h4 class="fw-bold text-center mb-1">Farmer Registration</h4>
+                            <p class="text-muted text-center mb-4">Register as a farmer to start detecting diseases</p>
+                            <form id="registerForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="regFullName" class="form-label fw-semibold">
+                                        <i class="fas fa-user me-1"></i> Full Name
+                                    </label>
+                                    <input type="text" class="form-control" id="regFullName"
+                                    placeholder="Enter your full name" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="regEmail" class="form-label fw-semibold">
+                                        <i class="far fa-envelope me-1"></i> Email
+                                    </label>
+                                    <input type="email" class="form-control" id="regEmail"
+                                    placeholder="Enter your email" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="regPhone" class="form-label fw-semibold">
+                                        <i class="fas fa-phone me-1"></i> Phone Number
+                                    </label>
+                                    <input type="tel" class="form-control" id="regPhone"
+                                    placeholder="Enter your phone number" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="regLocation" class="form-label fw-semibold">
+                                        <i class="fas fa-map-marker-alt me-1"></i> Location
+                                    </label>
+                                    <select class="form-select" id="regLocation" required>
+                                        <option value="">Select your district</option>
+                                        <option value="Colombo">Colombo</option>
+                                        <option value="Gampaha">Gampaha</option>
+                                        <option value="Kalutara">Kalutara</option>
+                                        <option value="Kandy">Kandy</option>
+                                        <option value="Matale">Matale</option>
+                                        <option value="Nuwara Eliya">Nuwara Eliya</option>
+                                        <option value="Galle">Galle</option>
+                                        <option value="Matara">Matara</option>
+                                        <option value="Hambantota">Hambantota</option>
+                                        <option value="Jaffna">Jaffna</option>
+                                        <option value="Kilinochchi">Kilinochchi</option>
+                                        <option value="Mannar">Mannar</option>
+                                        <option value="Vavuniya">Vavuniya</option>
+                                        <option value="Mullaitivu">Mullaitivu</option>
+                                        <option value="Batticaloa">Batticaloa</option>
+                                        <option value="Ampara">Ampara</option>
+                                        <option value="Trincomalee">Trincomalee</option>
+                                        <option value="Kurunegala">Kurunegala</option>
+                                        <option value="Puttalam">Puttalam</option>
+                                        <option value="Anuradhapura">Anuradhapura</option>
+                                        <option value="Polonnaruwa">Polonnaruwa</option>
+                                        <option value="Badulla">Badulla</option>
+                                        <option value="Monaragala">Monaragala</option>
+                                        <option value="Ratnapura">Ratnapura</option>
+                                        <option value="Kegalle">Kegalle</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="regPassword" class="form-label fw-semibold">
+                                        <i class="fas fa-lock me-1"></i> Password
+                                    </label>
+                                    <input type="password" class="form-control" id="regPassword"
+                                    placeholder="Create a password (min 6 chars)" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="regConfirmPassword" class="form-label fw-semibold">
+                                        <i class="fas fa-check-circle me-1"></i> Confirm Password
+                                    </label>
+                                    <input type="password" class="form-control" id="regConfirmPassword"
+                                    placeholder="Confirm your password" required />
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="regTerms" required />
+                                    <label class="form-check-label small" for="regTerms">
+                                        I agree to the Terms &amp; Conditions and Privacy Policy
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100 btn-lg fw-semibold">
+                                    <i class="fas fa-user-plus me-2"></i>Register
+                                </button>
+                            </form>
+                            <hr class="my-4" />
+                            <p class="text-center mb-0">
+                                Already have an account?
+                                <a href="login.html" class="text-success fw-semibold text-decoration-none">Login here</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth-carousel.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+</html>

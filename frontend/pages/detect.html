@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ChilliGuard | Detect Disease</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/detect.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div class="detect-wrapper">
+
+    <div class="dashboard-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+        <script src="../js/sidebar.js"></script>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOP HEADER -->
+            <header class="top-header">
+
+                <div class="header-page-title">
+                    <h5>Disease Detection</h5>
+                    <p>AI-powered chilli leaf disease analysis</p>
+                </div>
+
+                <div class="header-status">
+                    <span class="status-dot"></span>
+                    System Active
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <div class="content-area">
+
+                <!-- PAGE INTRODUCTION -->
+                <section class="detect-welcome">
+
+                    <div class="detect-welcome-content">
+
+                        <span class="welcome-label">
+                            AI LEAF ANALYSIS
+                        </span>
+
+                        <h2>Detect Chilli Leaf Diseases</h2>
+
+                        <p>
+                            Upload a clear image of your Nai Miris leaf.
+                            Our AI system will analyse the image and
+                            identify possible diseases.
+                        </p>
+
+                    </div>
+
+                    <div class="detect-welcome-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+
+                </section>
+
+
+                <!-- IMPORTANT WARNING -->
+                <div class="detect-warning">
+
+                    <div class="warning-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+
+                    <div>
+                        <h6>Important Image Requirement</h6>
+
+                        <p>
+                            Upload only a valid chilli leaf image.
+                            Images of other plants, animals or objects
+                            may be rejected by the system.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- UPLOAD SECTION -->
+                <section class="upload-section">
+
+                    <div class="upload-section-heading">
+
+                        <div>
+                            <h4>Upload Leaf Image</h4>
+                            <p>Select an image to start disease detection</p>
+                        </div>
+
+                        <span class="upload-step">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            STEP 01
+                        </span>
+
+                    </div>
+
+
+                    <!-- UPLOAD CARD -->
+                    <div class="upload-card">
+
+                        <form id="uploadForm">
+
+                            <!-- UPLOAD AREA -->
+                            <div id="uploadArea" class="upload-area">
+
+                                <input
+                                    type="file"
+                                    id="fileInput"
+                                    class="d-none"
+                                    accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                                >
+
+                                <div class="upload-content">
+
+                                    <div class="upload-main-icon">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                    </div>
+
+                                    <h5>Drag & Drop Your Image Here</h5>
+
+                                    <p>
+                                        or
+                                        <span class="browse-text">
+                                            browse files
+                                        </span>
+                                        from your device
+                                    </p>
+
+                                    <div class="upload-format-info">
+
+                                        <span>
+                                            <i class="fas fa-file-image"></i>
+                                            JPG / JPEG / PNG
+                                        </span>
+
+                                        <span>
+                                            <i class="fas fa-weight-hanging"></i>
+                                            Maximum 5 MB
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- IMAGE PREVIEW -->
+                            <div id="previewContainer"
+                                 class="preview-container">
+
+                                <div class="preview-heading">
+                                    <div>
+                                        <h6>
+                                            <i class="fas fa-image me-2"></i>
+                                            Selected Image
+                                        </h6>
+
+                                        <p>Review your image before analysis</p>
+                                    </div>
+                                </div>
+
+                                <div class="preview-image-wrapper">
+
+                                    <img
+                                        id="imagePreview"
+                                        src="#"
+                                        alt="Selected chilli leaf preview"
+                                        class="d-none"
+                                    >
+
+                                </div>
+
+                                <div class="preview-file-info">
+                                    <i class="fas fa-file-image"></i>
+                                    <p id="fileName" class="text-muted">
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <!-- SUBMIT BUTTON -->
+                            <div class="detect-action">
+
+                                <button type="submit"
+                                        class="btn-detect-submit">
+
+                                    <i class="fas fa-microscope"></i>
+                                    <span>Analyse Leaf Image</span>
+
+                                </button>
+
+                                <p class="detect-action-note">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Your image will be processed securely
+                                </p>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
+
+                <!-- IMAGE GUIDELINES -->
+                <section class="guidelines-section">
+
+                    <div class="section-heading">
+                        <h4>Tips for Better Detection</h4>
+                        <p>Follow these guidelines for better image quality</p>
+                    </div>
+
+                    <div class="guidelines-grid">
+
+                        <div class="guideline-card">
+
+                            <div class="guideline-icon">
+                                <i class="fas fa-sun"></i>
+                            </div>
+
+                            <h6>Good Lighting</h6>
+
+                            <p>
+                                Capture the leaf in natural lighting
+                                with enough brightness.
+                            </p>
+
+                        </div>
+
+
+                        <div class="guideline-card">
+
+                            <div class="guideline-icon">
+                                <i class="fas fa-camera"></i>
+                            </div>
+
+                            <h6>Clear Image</h6>
+
+                            <p>
+                                Keep the camera steady and avoid
+                                blurry photographs.
+                            </p>
+
+                        </div>
+
+
+                        <div class="guideline-card">
+
+                            <div class="guideline-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+
+                            <h6>Focus on Leaf</h6>
+
+                            <p>
+                                Make sure the chilli leaf is clearly
+                                visible in the image.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- HISTORY LINK -->
+                <section class="history-promo">
+
+                    <div class="history-promo-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+
+                    <div class="history-promo-content">
+                        <h5>View Your Previous Results</h5>
+
+                        <p>
+                            Check your previously analysed chilli
+                            leaf images and detection results.
+                        </p>
+                    </div>
+
+                    <a href="history.html" class="history-link">
+                        View History
+                        <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+
+                </section>
+
+
+                <!-- CROP TIP -->
+                <div class="crop-tip">
+
+                    <div class="crop-tip-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+
+                    <p>
+                        <strong>Crop Tip:</strong>
+                        Use clean, disease-free planting materials
+                        and maintain proper field sanitation to
+                        support healthy chilli cultivation.
+                    </p>
+
+                </div>
+
+
+                <!-- FOOTER -->
+                <footer class="dashboard-footer">
+                    <p>
+                        © 2026 ChilliGuard.
+                        Lightweight AI for healthier chilli cultivation.
+                    </p>
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="../js/bootstrap.bundle.min.js"></script>
+
+<!-- Detect JS -->
+<script src="../js/detect.js"></script>
+
+</body>
+</html>

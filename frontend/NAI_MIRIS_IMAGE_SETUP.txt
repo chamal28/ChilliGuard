@@ -1,0 +1,12 @@
+ChilliGuard Nai Miris visual update
+
+Updated pages:
+- index.html: full-width auto-rotating hero carousel
+- pages/login.html: poly-tunnel photo carousel on left, login form on right
+- pages/register.html: poly-tunnel photo carousel on left, registration form on right
+
+Images are stored locally in assets/ as PNG files. No remote image URLs are used.
+Keep the assets folder in the same location relative to index.html and pages/.
+
+Copy the contents of this folder into your existing frontend folder, preserving the folder structure.
+Backend API URLs and login/register form IDs are preserved.

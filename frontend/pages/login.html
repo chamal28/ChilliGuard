@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChilliGuard · Login</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/auth-modern.css" />
+    <link rel="stylesheet" href="../css/auth-icons.css" />
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+</head>
+<body class="auth-page">
+    <div class="login-wrapper">
+        <aside class="auth-showcase" data-auth-carousel>
+            <div class="auth-carousel" aria-label="Nai Miris crop photographs">
+                <div class="auth-slide is-active"><img src="../assets/nai-miris-poly-tunnel-01.png" alt="Nai Miris chilli fruits on leaves"></div>
+                <div class="auth-slide"><img src="../assets/nai-miris-poly-tunnel-02.png" alt="Nai Miris chilli plants with green, yellow and red fruits"></div>
+                <div class="auth-slide"><img src="../assets/nai-miris-poly-tunnel-03.png" alt="Fresh green and red Nai Miris chilli fruits"></div>
+            </div>
+            <div class="auth-carousel-dots" aria-label="Choose hero image">
+                <button type="button" class="is-active" aria-label="Show image 1"></button>
+                <button type="button" aria-label="Show image 2"></button>
+                <button type="button" aria-label="Show image 3"></button>
+            </div>
+            <a class="auth-brand" href="../index.html"><span><i class="fas fa-leaf"></i></span> ChilliGuard</a>
+            <div class="auth-showcase-copy">
+                <span class="auth-kicker">SMART NAI MIRIS CROP SUPPORT</span>
+                <h2>Welcome back to smarter crop care</h2>
+                <p>Sign in to review your chilli leaf analyses and continue protecting your Nai Miris crop.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i>Your personal detection dashboard</li><li><i class="fas fa-check-circle"></i>Previous analysis records</li><li><i class="fas fa-check-circle"></i>AI-assisted leaf disease insights</li>
+                </ul>
+            </div>
+            <div class="auth-showcase-footer">AI predictions are decision-support information. Confirm crop-specific action with a local agricultural professional.</div>
+        </aside>
+        <div class="container">
+            <div class="row justify-content-center align-items-center min-vh-100">
+                <div class="col-lg-5 col-md-7 col-11">
+                    <div class="card login-card shadow-lg border-0">
+                        <div class="card-body p-4 p-md-5">
+                            <div class="text-center mb-4">
+                                <h1 class="brand-name">
+                                    <i class="fas fa-leaf text-success me-2"></i>ChilliGuard
+                                </h1>
+                                <p class="brand-tagline">Smart Protection for Nai Miris Farmers</p>
+                            </div>
+                            <h4 class="fw-bold text-center mb-1">Welcome Back!</h4>
+                            <p class="text-muted text-center mb-4">Login to your account</p>
+                            <form id="loginForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label fw-semibold">
+                                        <i class="far fa-envelope me-1"></i> Email
+                                    </label>
+                                    <input type="email" class="form-control form-control-lg" id="loginEmail"
+                                    placeholder="Enter your email" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label fw-semibold">
+                                        <i class="fas fa-lock me-1"></i> Password
+                                    </label>
+                                    <input type="password" class="form-control form-control-lg" id="loginPassword"
+                                    placeholder="Enter your password" required />
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberMe" />
+                                        <label class="form-check-label small" for="rememberMe">Remember Me</label>
+                                    </div>
+                                    <a href="forgot-password.html" class="text-decoration-none small fw-semibold">
+                                        Forgot Password?
+                                    </a>
+                                </div>
+                                <button type="submit" class="btn btn-success w-100 btn-lg fw-semibold">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                                </button>
+                            </form>
+                            <hr class="my-4" />
+                            <p class="text-center mb-0">
+                                Don't have an account?
+                                <a href="register.html" class="text-success fw-semibold text-decoration-none">Register here</a>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-center text-muted small mt-3">
+                        <i class="fas fa-shield-alt me-1"></i> Early Detection · Better Protection
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/auth-carousel.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

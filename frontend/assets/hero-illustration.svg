@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4fdf7" />
+      <stop offset="100%" stop-color="#d1fae5" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#16a34a" />
+    </linearGradient>
+    <linearGradient id="pepperGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="450" fill="url(#bgGrad)" rx="24" />
+
+  <!-- Background decorative circles -->
+  <circle cx="520" cy="80" r="70" fill="#bbf7d0" opacity="0.3" />
+  <circle cx="80" cy="380" r="90" fill="#bbf7d0" opacity="0.3" />
+  <circle cx="50" cy="50" r="40" fill="#bbf7d0" opacity="0.2" />
+
+  <!-- Main Chilli Leaf -->
+  <g transform="translate(180, 100)">
+    <!-- Leaf Body -->
+    <path d="M120 40 C220 20 280 80 280 150 C280 220 220 280 120 260 C20 240 20 80 120 40 Z" fill="url(#leafGrad)" />
+    <!-- Leaf Veins -->
+    <path d="M120 40 L120 260" stroke="#15803d" stroke-width="5" fill="none" />
+    <path d="M120 90 L200 70" stroke="#15803d" stroke-width="4" fill="none" />
+    <path d="M120 120 L210 110" stroke="#15803d" stroke-width="4" fill="none" />
+    <path d="M120 150 L200 150" stroke="#15803d" stroke-width="4" fill="none" />
+    <path d="M120 180 L180 190" stroke="#15803d" stroke-width="4" fill="none" />
+    <path d="M120 210 L160 220" stroke="#15803d" stroke-width="3" fill="none" />
+    <!-- Leaf Gloss -->
+    <path d="M160 80 C180 70 200 90 190 110 C180 100 160 100 160 80 Z" fill="#86efac" opacity="0.6" />
+  </g>
+
+  <!-- Red Chilli Pepper (Disease Symbol) -->
+  <g transform="translate(380, 260)">
+    <path d="M20 0 C60 -10 100 20 90 60 C80 100 40 110 20 70 C0 30 0 10 20 0 Z" fill="url(#pepperGrad)" />
+    <!-- Stem -->
+    <path d="M20 0 C25 -10 40 -15 50 -5" fill="#15803d" stroke="#15803d" stroke-width="3" />
+    <!-- Highlight -->
+    <path d="M30 20 C40 15 50 25 45 35 C35 40 25 30 30 20 Z" fill="#fca5a5" opacity="0.6" />
+  </g>
+
+  <!-- Magnifying Glass (Detection) -->
+  <g transform="translate(130, 170)">
+    <circle cx="60" cy="60" r="55" fill="none" stroke="#ffffff" stroke-width="12" />
+    <circle cx="60" cy="60" r="40" fill="none" stroke="#ffffff" stroke-width="6" opacity="0.7" />
+    <line x1="95" y1="95" x2="145" y2="145" stroke="#ffffff" stroke-width="14" stroke-linecap="round" />
+    <!-- Glass glare -->
+    <circle cx="45" cy="45" r="10" fill="#ffffff" opacity="0.5" />
+  </g>
+
+  <!-- Mobile Phone / Upload Device (AI Technology) -->
+  <g transform="translate(400, 70)">
+    <!-- Phone Body -->
+    <rect x="0" y="0" width="70" height="120" rx="16" fill="#1e293b" stroke="#334155" stroke-width="4" />
+    <!-- Camera notch -->
+    <circle cx="35" cy="18" r="5" fill="#475569" />
+    <!-- Screen -->
+    <rect x="10" y="35" width="50" height="50" rx="6" fill="#22c55e" opacity="0.9" />
+    <!-- Upload Arrow (AI Processing) -->
+    <path d="M35 45 L35 70 M25 55 L35 45 L45 55" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Home button -->
+    <rect x="20" y="98" width="30" height="6" rx="3" fill="#475569" />
+  </g>
+
+  <!-- Floating AI Sparkles & Data Nodes -->
+  <g fill="#fbbf24">
+    <circle cx="80" cy="100" r="9" />
+    <circle cx="490" cy="200" r="11" />
+    <circle cx="530" cy="320" r="7" />
+    <circle cx="200" cy="350" r="8" />
+    <circle cx="60" cy="240" r="6" />
+    <circle cx="320" cy="40" r="7" />
+  </g>
+
+  <!-- Small decorative plus icons -->
+  <g stroke="#fbbf24" stroke-width="4" stroke-linecap="round">
+    <line x1="78" y1="98" x2="82" y2="102" />
+    <line x1="488" y1="198" x2="492" y2="202" />
+    <line x1="198" y1="348" x2="202" y2="352" />
+  </g>
+
+  <!-- Small leaf in bottom right -->
+  <g transform="translate(480, 370)">
+    <path d="M20 0 C40 -10 60 10 50 30 C40 50 10 40 0 20 C-10 0 0 10 20 0 Z" fill="#4ade80" opacity="0.6" />
+    <path d="M20 0 L20 30" stroke="#15803d" stroke-width="2" fill="none" opacity="0.6" />
+  </g>
+</svg>

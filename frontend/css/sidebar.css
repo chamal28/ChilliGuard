@@ -1,0 +1,433 @@
+/* ==========================================================
+   CHILLIGUARD - ONE SHARED FIXED SIDEBAR FOR ALL PAGES
+   Applies to Dashboard, Detect, Prediction Result and History.
+   ========================================================== */
+
+:root {
+    --cg-sidebar-width: 255px;
+    --cg-sidebar-top: #176b45;
+    --cg-sidebar-mid: #125638;
+    --cg-sidebar-bottom: #0d402d;
+}
+
+/* All authenticated page wrappers use the same two-column layout. */
+.dashboard-wrapper,
+.detect-wrapper {
+    min-height: 100vh;
+}
+
+.dashboard-layout,
+.app-layout.dashboard-layout,
+.dashboard-wrapper > .dashboard-layout,
+.detect-wrapper > .dashboard-layout {
+    display: block !important;
+    min-height: 100vh;
+}
+
+/* Fixed sidebar: it is attached to the browser viewport, not the page. */
+.dashboard-layout > .sidebar,
+.app-layout.dashboard-layout > .sidebar {
+    position: fixed !important;
+    inset: 0 auto 0 0 !important;
+    z-index: 1200 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+
+    width: var(--cg-sidebar-width) !important;
+    min-width: var(--cg-sidebar-width) !important;
+    max-width: var(--cg-sidebar-width) !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+    max-height: 100vh !important;
+
+    padding: 22px 18px 16px !important;
+    margin: 0 !important;
+
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    overscroll-behavior: none !important;
+
+    color: #fff !important;
+    background: linear-gradient(
+        180deg,
+        var(--cg-sidebar-top) 0%,
+        var(--cg-sidebar-mid) 48%,
+        var(--cg-sidebar-bottom) 100%
+    ) !important;
+
+    box-sizing: border-box !important;
+}
+
+/* Main page scrolls independently; sidebar remains stationary. */
+.dashboard-layout > .main-content,
+.app-layout.dashboard-layout > .main-content {
+    display: block;
+    width: calc(100% - var(--cg-sidebar-width)) !important;
+    min-width: 0 !important;
+    min-height: 100vh;
+    margin: 0 0 0 var(--cg-sidebar-width) !important;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Brand area */
+.sidebar-brand {
+    flex: 0 0 auto !important;
+    width: 100%;
+    padding: 0 8px 30px !important;
+    margin: 0 !important;
+}
+
+.brand-link {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 1.3rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -.5px;
+}
+
+.brand-link:hover { color: #fff !important; }
+
+.brand-icon {
+    display: inline-flex !important;
+    flex: 0 0 40px;
+    align-items: center;
+    justify-content: center;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    background: rgba(255,255,255,.15) !important;
+    color: #a7e8bc !important;
+    font-size: 1.2rem !important;
+}
+
+/* Navigation takes the middle space only. */
+.sidebar-section {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    width: 100%;
+    margin: 0 !important;
+}
+
+.sidebar-heading {
+    flex: 0 0 auto !important;
+    padding: 0 10px !important;
+    margin: 0 0 13px !important;
+    color: #a6c3b1 !important;
+    font-size: .68rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.4px !important;
+}
+
+#dashNav {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sidebar-nav,
+.sidebar-menu {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 7px !important;
+
+    width: 100%;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    list-style: none !important;
+    overflow: visible !important;
+}
+
+.sidebar-menu > .nav-item {
+    display: block;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.sidebar-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 13px !important;
+
+    width: 100% !important;
+    min-height: 45px !important;
+    padding: 11px 13px !important;
+    margin: 0 !important;
+
+    border: 0 !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+    color: #d0e1d6 !important;
+
+    font-size: .86rem !important;
+    font-weight: 500 !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+.sidebar-link i {
+    display: inline-block !important;
+    flex: 0 0 20px !important;
+    width: 20px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    font-size: .98rem !important;
+}
+
+.sidebar-link:hover {
+    background: rgba(255,255,255,.10) !important;
+    color: #fff !important;
+}
+
+.sidebar-link.active,
+.sidebar-link.active:hover {
+    background: #fff !important;
+    color: #124d35 !important;
+    font-weight: 700 !important;
+}
+
+/* Helper panel is always anchored below the four menu links. */
+.sidebar-menu > .sidebar-help-item {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin: auto 0 0 !important;
+    padding: 14px 0 0 !important;
+}
+
+.sidebar-help {
+    display: block !important;
+    width: 100% !important;
+    padding: 13px 14px !important;
+    margin: 0 !important;
+    border: 1px solid rgba(255,255,255,.10) !important;
+    border-radius: 13px !important;
+    background: rgba(255,255,255,.09) !important;
+}
+
+.help-icon {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 32px !important;
+    height: 32px !important;
+    margin: 0 0 9px !important;
+    border-radius: 9px !important;
+    background: rgba(255,255,255,.14) !important;
+    color: #a7e8bc !important;
+}
+
+.sidebar-help h6 {
+    margin: 0 0 5px !important;
+    color: #fff !important;
+    font-size: .78rem !important;
+    font-weight: 700 !important;
+}
+
+.sidebar-help p {
+    margin: 0 0 8px !important;
+    color: #c1d7c9 !important;
+    font-size: .68rem !important;
+    line-height: 1.45 !important;
+}
+
+.sidebar-help a {
+    color: #a7e8bc !important;
+    font-size: .72rem !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+}
+
+.sidebar-help a:hover { color: #fff !important; }
+
+/* Result page language control is injected by result.js. */
+.sidebar-menu > .sidebar-language-item {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    padding: 9px 8px 0 !important;
+    margin: 0 !important;
+}
+
+.sidebar-language-item label {
+    display: block;
+    margin: 0 0 5px 3px;
+    color: #a6c3b1;
+    font-size: .66rem;
+}
+
+.sidebar-language-item select {
+    width: 100% !important;
+    padding: 8px 10px !important;
+    border: 1px solid rgba(255,255,255,.25) !important;
+    border-radius: 8px !important;
+    background: rgba(255,255,255,.12) !important;
+    color: #fff !important;
+    font-size: .76rem !important;
+}
+
+.sidebar-language-item select option {
+    color: #20352b;
+    background: #fff;
+}
+
+/* Logout always remains the final sidebar item. */
+.sidebar-menu > .sidebar-logout-item {
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin: 8px 0 0 !important;
+    padding: 0 !important;
+}
+
+.sidebar-logout {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 13px !important;
+
+    width: 100% !important;
+    min-height: 43px !important;
+    padding: 10px 13px !important;
+    margin: 0 !important;
+
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+    color: #f2d0d0 !important;
+
+    font-family: inherit !important;
+    font-size: .84rem !important;
+    font-weight: 600 !important;
+    text-align: left !important;
+    cursor: pointer;
+}
+
+.sidebar-logout:hover {
+    background: rgba(255,255,255,.10) !important;
+    color: #fff !important;
+}
+
+.sidebar-logout i {
+    flex: 0 0 20px;
+    width: 20px;
+    text-align: center;
+}
+
+/* On smaller screens the sidebar becomes a top navigation bar. */
+@media (max-width: 768px) {
+    .dashboard-layout,
+    .app-layout.dashboard-layout,
+    .dashboard-wrapper > .dashboard-layout,
+    .detect-wrapper > .dashboard-layout {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .dashboard-layout > .sidebar,
+    .app-layout.dashboard-layout > .sidebar {
+        position: relative !important;
+        inset: auto !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        padding: 14px 16px !important;
+        overflow: visible !important;
+    }
+
+    .dashboard-layout > .main-content,
+    .app-layout.dashboard-layout > .main-content {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .sidebar-brand { padding: 0 5px 13px !important; }
+    .sidebar-heading { display: none !important; }
+
+    .sidebar-section,
+    #dashNav {
+        display: block !important;
+        flex: initial !important;
+        min-height: 0 !important;
+    }
+
+    .sidebar-nav,
+    .sidebar-menu {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        gap: 5px !important;
+    }
+
+    .sidebar-menu > .nav-item {
+        width: auto !important;
+    }
+
+    .sidebar-link {
+        width: auto !important;
+        min-height: 38px !important;
+        padding: 8px 10px !important;
+        font-size: .72rem !important;
+    }
+
+    .sidebar-help-item { display: none !important; }
+
+    .sidebar-language-item {
+        width: auto !important;
+        padding: 4px !important;
+    }
+
+    .sidebar-language-item select { width: 112px !important; }
+
+    .sidebar-logout-item { margin: 4px 0 0 !important; }
+
+    .sidebar-logout {
+        width: auto !important;
+        min-height: 38px !important;
+        padding: 8px 11px !important;
+        font-size: .72rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-nav,
+    .sidebar-menu { gap: 4px !important; }
+
+    .sidebar-link {
+        flex-direction: column !important;
+        gap: 4px !important;
+        padding: 8px 6px !important;
+        font-size: .64rem !important;
+    }
+
+    .sidebar-logout {
+        flex-direction: column !important;
+        gap: 3px !important;
+        padding: 7px 9px !important;
+    }
+}

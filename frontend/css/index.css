@@ -1,0 +1,80 @@
+
+:root{--cg-green:#176b45;--cg-deep:#0d402d;--cg-leaf:#258653;--cg-pale:#eaf5ed;--cg-ink:#18382a;--cg-muted:#718078;--cg-bg:#f5f8f5}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{font-family:Inter,'Segoe UI',Arial,sans-serif;color:var(--cg-ink);background:#fff}
+.navbar{min-height:78px;border-bottom:1px solid #e9efe9}
+.navbar-brand{color:var(--cg-deep)!important;letter-spacing:-.7px}
+.navbar-brand i{color:var(--cg-leaf)!important}
+.navbar .nav-link{font-size:.91rem;font-weight:600;color:#52665a;padding:.7rem .9rem!important}
+.navbar .nav-link:hover,.navbar .nav-link.active{color:var(--cg-green)}
+.navbar .btn{border-radius:10px;font-weight:650;padding:.62rem 1.15rem}
+.btn-success{background:var(--cg-green);border-color:var(--cg-green)}
+.btn-success:hover{background:var(--cg-deep);border-color:var(--cg-deep)}
+.home-hero{position:relative}
+.home-hero .carousel,.home-hero .carousel-inner,.home-hero .carousel-item{height:min(790px,calc(100vh - 78px));min-height:590px}
+.home-hero .carousel-item{position:relative;background-position:center;background-size:cover;background-repeat:no-repeat}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,25,17,.88) 0%,rgba(8,35,23,.76) 43%,rgba(8,35,23,.26) 100%),linear-gradient(0deg,rgba(4,24,15,.30),transparent 55%)}
+.hero-inner{position:relative;z-index:2;height:100%;display:flex;align-items:center}
+.hero-copy{max-width:690px;padding:35px 0 65px;color:white}
+.hero-kicker{display:inline-flex;align-items:center;padding:10px 15px;border:1px solid rgba(255,255,255,.25);border-radius:40px;background:rgba(255,255,255,.11);color:#d5f3df;font-size:.77rem;font-weight:700;letter-spacing:.3px;backdrop-filter:blur(8px)}
+.hero-copy h1{max-width:690px;margin:25px 0 19px;font-size:clamp(2.6rem,5.2vw,4.8rem);line-height:1.07;letter-spacing:-2px;font-weight:800;color:#fff}
+.hero-copy h1 span{color:#9be0b2}
+.hero-copy p{max-width:610px;margin-bottom:28px;color:rgba(255,255,255,.83);font-size:1.08rem;line-height:1.8}
+.hero-actions{display:flex;flex-wrap:wrap;gap:13px}
+.hero-actions .btn{padding:14px 22px;border-radius:11px;font-size:.9rem;font-weight:700}
+.hero-primary{background:#2b925b;border:1px solid #2b925b;color:#fff}
+.hero-primary:hover{background:#1d7447;color:#fff}
+.hero-secondary{border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.08);color:#fff;backdrop-filter:blur(5px)}
+.hero-secondary:hover{background:#fff;color:var(--cg-deep)}
+.hero-proof{display:flex;flex-wrap:wrap;gap:22px;margin-top:28px;color:rgba(255,255,255,.82);font-size:.78rem;font-weight:600}
+.hero-proof i{margin-right:7px;color:#9be0b2}
+.home-hero .carousel-indicators{z-index:5;justify-content:flex-start;margin-left:max(calc((100% - 1140px)/2),7%);margin-bottom:38px}
+.home-hero .carousel-indicators [data-bs-target]{width:25px;height:4px;border:0;border-radius:10px}
+.home-hero .carousel-control-prev,.home-hero .carousel-control-next{z-index:4;width:7%}
+.hero-bottom-strip{position:relative;z-index:5;background:#fff;border-bottom:1px solid #eaf0eb;box-shadow:0 12px 30px rgba(19,59,37,.06)}
+.hero-bottom-strip .container{display:grid;grid-template-columns:repeat(3,1fr);padding-top:20px;padding-bottom:20px}
+.hero-stat{display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid #e7eee8}
+.hero-stat:last-child{border:0}
+.hero-stat strong{font-size:1.5rem;color:var(--cg-green);font-weight:800}
+.hero-stat span{max-width:145px;color:#75847a;font-size:.76rem;line-height:1.4}
+.features-section{padding:100px 0!important;background:#f7faf7}
+.section-eyebrow{color:var(--cg-leaf);font-size:.72rem;font-weight:800;letter-spacing:1.7px}
+.features-section h2,.about-section h2{color:var(--cg-ink);letter-spacing:-1.2px}
+.features-section .display-5{font-size:clamp(2rem,4vw,3rem)}
+.feature-card{border:1px solid #e7eee8!important;border-radius:18px!important;box-shadow:0 8px 26px rgba(19,59,37,.045)!important;transition:.25s ease}
+.feature-card:hover{transform:translateY(-7px);box-shadow:0 18px 40px rgba(19,59,37,.10)!important}
+.feature-icon{width:76px;height:76px;background:#e8f5ec;border-radius:22px}
+.feature-icon i{font-size:1.9rem!important}
+.features-section .text-muted,.about-section .text-muted{color:#748279!important;line-height:1.75}
+.about-section{padding:95px 0!important;background:#fff!important}
+.about-section .card{border:1px solid #e7eee8!important;border-radius:20px!important;box-shadow:0 12px 35px rgba(19,59,37,.07)!important}
+.about-section .step-icon .badge{background:var(--cg-green)!important}
+.disease-coverage-section{padding:78px 0;background:#f3f8f4}
+.coverage-heading{text-align:center;max-width:700px;margin:0 auto 30px}
+.coverage-heading h2{margin:12px 0;color:var(--cg-ink);font-weight:800;letter-spacing:-1px}
+.coverage-heading h2 span{color:var(--cg-green)}
+.coverage-heading p{color:var(--cg-muted)}
+.coverage-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.coverage-pills span{padding:12px 17px;background:#fff;border:1px solid #e1ece4;border-radius:40px;color:#395847;font-size:.82rem;font-weight:650;box-shadow:0 5px 16px rgba(19,59,37,.035)}
+.coverage-pills i{font-size:.55rem;color:#26935b;vertical-align:middle;margin-right:7px}
+.cta-section{padding:78px 0!important;background:linear-gradient(115deg,#145b3b,#0d402d)!important}
+.cta-section h2{font-weight:800;letter-spacing:-1px}
+.cta-section p{color:rgba(255,255,255,.8)}
+.cta-section .btn-light{border-radius:11px;padding:14px 25px}
+.footer-section{background:#092c1f!important;color:#b8cabe!important}
+.footer-section a:hover{color:#fff!important}
+@media(max-width:767px){
+ .home-hero .carousel,.home-hero .carousel-inner,.home-hero .carousel-item{height:690px;min-height:620px}
+ .hero-shade{background:linear-gradient(90deg,rgba(5,25,17,.86),rgba(5,25,17,.55)),linear-gradient(0deg,rgba(4,24,15,.35),transparent)}
+ .hero-copy{padding:20px 10px 65px}
+ .hero-copy h1{font-size:2.55rem;letter-spacing:-1.3px}
+ .hero-copy p{font-size:.95rem}
+ .hero-proof{gap:10px 18px}
+ .home-hero .carousel-indicators{margin-left:8%;margin-bottom:25px}
+ .hero-bottom-strip .container{grid-template-columns:1fr;gap:13px;padding-top:17px;padding-bottom:17px}
+ .hero-stat{justify-content:flex-start;border-right:0;border-bottom:1px solid #e7eee8;padding:4px 10px 12px}
+ .hero-stat:last-child{border-bottom:0;padding-bottom:4px}
+ .features-section,.about-section{padding:65px 0!important}
+ .coverage-pills{gap:8px}
+ .coverage-pills span{font-size:.75rem}
+}

@@ -1,0 +1,497 @@
+
+:root {
+    --cg-green: #176b45;
+    --cg-deep: #0d402d;
+    --cg-leaf: #258653;
+    --cg-ink: #18382a;
+    --cg-muted: #718078;
+}
+* { box-sizing: border-box; }
+.auth-page {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--cg-ink);
+    background: #f3f8f4;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+.login-wrapper, .register-wrapper {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(380px, .95fr) minmax(500px, 1.05fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 64px);
+    padding: 28px clamp(22px, 5.2vw, 82px);
+    background: radial-gradient(circle at 7% 6%, #e1f1e5 0, transparent 34%), #f5f8f5;
+}
+.auth-showcase {
+    position: sticky;
+    top: 24px;
+    isolation: isolate;
+    min-height: min(780px, calc(100vh - 48px));
+    height: calc(100vh - 48px);
+    max-height: 900px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(28px, 4vw, 58px);
+    border-radius: 27px;
+    color: #fff;
+    background: #0b3827;
+    box-shadow: 0 24px 65px rgba(13,64,45,.18);
+}
+.auth-showcase::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(4,32,19,.57) 0%, rgba(4,32,19,.47) 38%, rgba(3,31,18,.84) 100%);
+}
+.auth-carousel, .auth-slide { position: absolute; inset: 0; z-index: -2; }
+.auth-slide {
+    opacity: 0;
+    transition: opacity 1.15s ease-in-out;
+}
+.auth-slide.is-active { opacity: 1; }
+.auth-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.015);
+}
+.auth-brand {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+.auth-brand:hover { color: #fff; }
+.auth-brand span {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(255,255,255,.17);
+    color: #b8efc8;
+}
+.auth-showcase-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 540px;
+    margin: auto 0;
+    padding: 38px 0;
+}
+.auth-kicker {
+    display: inline-block;
+    padding: 9px 13px;
+    border: 1px solid rgba(255,255,255,.32);
+    border-radius: 30px;
+    background: rgba(255,255,255,.13);
+    color: #e9fff0;
+    font-size: .69rem;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+.auth-showcase-copy h2 {
+    margin: 25px 0 14px;
+    color: #fff;
+    font-size: clamp(2.1rem, 3.4vw, 3.45rem);
+    font-weight: 850;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+.auth-showcase-copy p {
+    max-width: 500px;
+    color: rgba(255,255,255,.91);
+    font-size: .98rem;
+    line-height: 1.75;
+}
+.auth-showcase-copy ul {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none;
+}
+.auth-showcase-copy li {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    color: #fff;
+    font-size: .88rem;
+    font-weight: 650;
+}
+.auth-showcase-copy li i { color: #9ee6b5; }
+.auth-showcase-footer {
+    position: relative;
+    z-index: 2;
+    max-width: 520px;
+    color: rgba(255,255,255,.78);
+    font-size: .72rem;
+    line-height: 1.6;
+}
+.auth-carousel-dots {
+    position: absolute;
+    z-index: 4;
+    right: 26px;
+    bottom: 25px;
+    display: flex;
+    gap: 8px;
+}
+.auth-carousel-dots button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 50px;
+    background: rgba(255,255,255,.55);
+    cursor: pointer;
+    transition: width .25s ease, background .25s ease;
+}
+.auth-carousel-dots button.is-active {
+    width: 26px;
+    background: #fff;
+}
+.login-wrapper > .container,
+.register-wrapper > .container {
+    width: 100%;
+    max-width: 760px;
+    padding: 0;
+}
+.login-wrapper .row,
+.register-wrapper .row {
+    min-height: auto !important;
+    margin: 0;
+}
+.login-wrapper .row > *,
+.register-wrapper .row > * {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+}
+.login-card, .register-card {
+    overflow: hidden;
+    border: 1px solid #e5eee7 !important;
+    border-radius: 25px !important;
+    background: #fff;
+    box-shadow: 0 22px 65px rgba(24,56,42,.09) !important;
+}
+.login-card .card-body, .register-card .card-body {
+    padding: clamp(28px, 4vw, 54px) !important;
+}
+.brand-name {
+    margin: 0;
+    color: var(--cg-deep);
+    font-size: 2rem;
+    font-weight: 850;
+    letter-spacing: -1px;
+}
+.brand-tagline {
+    margin: 7px 0 0;
+    color: #829087;
+    font-size: .82rem;
+}
+.login-card h4, .register-card h4 {
+    margin-top: 22px;
+    color: var(--cg-ink);
+    font-size: 1.45rem;
+    font-weight: 800;
+}
+.login-card .text-muted, .register-card .text-muted { color: #78847d !important; }
+.login-card .form-label, .register-card .form-label {
+    margin-bottom: 8px;
+    color: #456052;
+    font-size: .84rem;
+    font-weight: 700 !important;
+}
+.login-card .form-control,
+.register-card .form-control,
+.register-card .form-select {
+    min-height: 49px;
+    padding: 12px 14px;
+    border: 1px solid #dfeae2;
+    border-radius: 12px;
+    background-color: #fff;
+    color: #233c30;
+    font-size: .9rem;
+    box-shadow: none;
+}
+.login-card .form-control:focus,
+.register-card .form-control:focus,
+.register-card .form-select:focus {
+    border-color: #55a879;
+    box-shadow: 0 0 0 4px rgba(37,134,83,.11);
+}
+.login-card .btn-success, .register-card .btn-success {
+    min-height: 49px;
+    border: 0;
+    border-radius: 12px;
+    background: linear-gradient(105deg, #238553, #125638);
+    font-size: .92rem;
+    box-shadow: 0 8px 18px rgba(23,107,69,.15);
+}
+.login-card .btn-success:hover, .register-card .btn-success:hover {
+    background: linear-gradient(105deg, #176b45, #0d402d);
+}
+.login-card a, .register-card a { color: var(--cg-green) !important; }
+.login-card hr, .register-card hr { border-color: #e8eee9; opacity: 1; }
+.register-card .form-check { margin-top: 3px; }
+.login-wrapper .container > .row > div > p { margin-bottom: 0; }
+.register-wrapper { align-items: start; }
+.register-wrapper .auth-showcase { top: 24px; }
+.register-wrapper .container { padding-top: 4px; padding-bottom: 4px; }
+.register-card .card-body { padding-top: 34px !important; padding-bottom: 34px !important; }
+@media (max-width: 1050px) {
+    .login-wrapper, .register-wrapper {
+        grid-template-columns: minmax(300px,.85fr) minmax(420px,1.15fr);
+        gap: 24px;
+        padding: 22px;
+    }
+    .auth-showcase { padding: 30px; }
+    .auth-showcase-copy h2 { font-size: 2.2rem; }
+}
+@media (max-width: 820px) {
+    .login-wrapper, .register-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px;
+    }
+    .auth-showcase {
+        position: relative;
+        top: auto;
+        width: 100%;
+        height: 470px;
+        min-height: 470px;
+        max-height: none;
+    }
+    .login-wrapper > .container, .register-wrapper > .container { max-width: 680px; }
+}
+@media (max-width: 520px) {
+    .login-wrapper, .register-wrapper { padding: 10px; gap: 16px; }
+    .auth-showcase {
+        height: 420px;
+        min-height: 420px;
+        padding: 23px;
+        border-radius: 19px;
+    }
+    .auth-showcase-copy { padding: 20px 0; }
+    .auth-showcase-copy h2 { font-size: 2rem; }
+    .auth-showcase-copy p { font-size: .88rem; }
+    .auth-showcase-copy li { font-size: .8rem; }
+    .auth-carousel-dots { right: 20px; bottom: 18px; }
+    .login-card .card-body, .register-card .card-body { padding: 25px 20px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .auth-slide { transition: none; }
+}
+
+
+/* =========================================
+   ChilliGuard - Mobile Registration Fix
+   ========================================= */
+
+@media (max-width: 520px) {
+
+    .register-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 22px;
+        padding: 12px;
+        min-height: 100vh;
+    }
+
+    /* Allow the hero panel to grow with its content */
+    .register-wrapper .auth-showcase {
+        position: relative;
+        top: auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding: 22px 20px 46px;
+        justify-content: flex-start;
+        border-radius: 19px;
+    }
+
+    .register-wrapper .auth-showcase-copy {
+        margin: 22px 0 16px;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .register-wrapper .auth-showcase-copy h2 {
+        font-size: clamp(1.65rem, 7vw, 2rem);
+        line-height: 1.15;
+        margin: 16px 0 10px;
+        letter-spacing: -0.7px;
+    }
+
+    .register-wrapper .auth-showcase-copy p {
+        font-size: 0.86rem;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    .register-wrapper .auth-showcase-copy ul {
+        gap: 9px;
+        margin-top: 15px;
+    }
+
+    .register-wrapper .auth-showcase-copy li {
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+
+    /* Keep the disclaimer visible */
+    .register-wrapper .auth-showcase-footer {
+        position: relative;
+        margin-top: 8px;
+        padding-bottom: 8px;
+        font-size: 0.68rem;
+        line-height: 1.5;
+    }
+
+    .register-wrapper .auth-carousel-dots {
+        right: 17px;
+        bottom: 16px;
+    }
+
+    /* Registration card spacing */
+    .register-wrapper > .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .register-wrapper .register-card {
+        width: 100%;
+        margin: 0;
+        border-radius: 22px !important;
+    }
+
+    .register-wrapper .register-card .card-body {
+        padding: 25px 18px !important;
+    }
+
+    .register-wrapper .register-card .brand-name {
+        font-size: 1.7rem;
+    }
+
+    .register-wrapper .register-card h4 {
+        font-size: 1.25rem;
+        margin-top: 16px;
+    }
+
+    .register-wrapper .register-card .form-control,
+    .register-wrapper .register-card .form-select {
+        min-height: 46px;
+        font-size: 0.88rem;
+    }
+
+    .register-wrapper .register-card .form-check-label {
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .register-wrapper {
+        padding: 9px;
+        gap: 17px;
+    }
+
+    .register-wrapper .auth-showcase {
+        padding: 19px 16px 44px;
+    }
+
+    .register-wrapper .auth-showcase-copy h2 {
+        font-size: 1.55rem;
+    }
+
+    .register-wrapper .register-card .card-body {
+        padding: 22px 15px !important;
+    }
+}
+
+
+/* Mobile Login Hero Responsive Fix */
+
+@media (max-width: 520px) {
+
+    .login-wrapper .auth-showcase {
+        position: relative;
+        top: auto;
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding: 22px 20px 46px;
+        justify-content: flex-start;
+        border-radius: 19px;
+    }
+
+    .login-wrapper .auth-showcase-copy {
+        margin: 22px 0 16px;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .login-wrapper .auth-showcase-copy h2 {
+        font-size: clamp(1.65rem, 7vw, 2rem);
+        line-height: 1.15;
+        margin: 16px 0 10px;
+        letter-spacing: -0.7px;
+    }
+
+    .login-wrapper .auth-showcase-copy p {
+        font-size: 0.86rem;
+        line-height: 1.5;
+        margin-bottom: 0;
+    }
+
+    .login-wrapper .auth-showcase-copy ul {
+        gap: 9px;
+        margin-top: 15px;
+    }
+
+    .login-wrapper .auth-showcase-copy li {
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+
+    .login-wrapper .auth-showcase-footer {
+        position: relative;
+        margin-top: 8px;
+        padding-bottom: 8px;
+        font-size: 0.68rem;
+        line-height: 1.5;
+    }
+
+    .login-wrapper .auth-carousel-dots {
+        right: 17px;
+        bottom: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .login-wrapper .auth-showcase {
+        padding: 19px 16px 44px;
+    }
+
+    .login-wrapper .auth-showcase-copy h2 {
+        font-size: 1.55rem;
+    }
+}

@@ -1,0 +1,55 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+backend/.chilliguard_secret
+*.pem
+*.key
+
+# Local database
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploaded user images
+backend/uploads/
+
+# Original dataset (large files)
+dataset/
+
+# Backup files and folders
+**/backups/
+*.backup
+*.bak
+
+# Temporary ZIP files
+*.zip
+
+# Old model files in backend/models root
+backend/models/*.keras
+backend/models/*.h5
+
+# Keep only the selected final models
+!backend/models/binary_model/
+!backend/models/disease_model/
+!backend/models/severity_model/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Historical source files
+backend/*.backup_before_*
+backend/*_before_*.py
+frontend/js/*_before_*.js

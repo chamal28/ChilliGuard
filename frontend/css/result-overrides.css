@@ -1,0 +1,408 @@
+
+/* ==========================================
+   RESULT PAGE - FINAL LAYOUT CORRECTIONS
+========================================== */
+
+/* Validation and warning panels */
+
+.result-notices-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "validation warning";
+    align-items: stretch;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.result-notices-row > .validation-box {
+    grid-area: validation;
+    min-width: 0;
+    height: 100%;
+    margin: 0 !important;
+    padding: 15px 17px;
+}
+
+.result-notices-row > #predictionWarning {
+    grid-area: warning;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    height: 100%;
+    margin: 0 !important;
+    padding: 14px 17px;
+}
+
+.result-notices-row #predictionWarning.d-none {
+    display: none !important;
+}
+
+.result-notices-row:has(#predictionWarning.d-none) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "validation";
+}
+
+
+/* ==========================================
+   PRIMARY DISEASE - MAIN RESULT
+========================================== */
+
+.primary-disease-column {
+    width: 100%;
+}
+
+.disease-card.primary-disease {
+    width: 100%;
+    height: auto;
+    padding: 26px;
+    border: 2px solid #efb0b0;
+    border-top: 6px solid #dc4545;
+    border-radius: 16px;
+    background: linear-gradient(
+        145deg,
+        #fffafa 0%,
+        #ffffff 60%
+    );
+}
+
+/* Primary disease heading */
+
+.primary-disease .disease-rank-header {
+    min-height: 30px;
+    margin-bottom: 14px;
+}
+
+.primary-disease .disease-rank-badge {
+    padding: 8px 13px;
+    font-size: 13px;
+}
+
+.primary-disease .top-disease-mark {
+    padding: 7px 11px;
+    font-size: 11px;
+}
+
+/* Primary disease name */
+
+.primary-disease .disease-name {
+    margin-bottom: 10px;
+    color: #b93636;
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.primary-disease .disease-class {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Primary disease confidence */
+
+.primary-disease .confidence-box {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.primary-disease .confidence-label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.primary-disease .confidence-score {
+    color: #d13f3f;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.primary-disease .confidence-donut {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+}
+
+.primary-disease .confidence-donut::before {
+    width: 45px;
+    height: 45px;
+}
+
+.primary-disease .confidence-donut::after {
+    font-size: 11px;
+}
+
+.primary-disease .confidence-progress {
+    height: 12px;
+}
+
+/* Primary disease details */
+
+.primary-disease .disease-details {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 18px;
+}
+
+.primary-disease .disease-details > * {
+    width: 100%;
+    max-width: 100%;
+}
+
+.primary-disease .detail-title {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.primary-disease .detail-text {
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.primary-disease .treatment-box,
+.primary-disease .prevention-box {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 17px;
+}
+
+.primary-disease .advice-list {
+    display: block;
+    margin: 5px 0 0;
+    padding-left: 22px;
+    list-style: disc outside;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.primary-disease .advice-list li {
+    display: list-item;
+    margin-bottom: 7px;
+    padding-left: 3px;
+}
+
+.primary-disease .advice-list li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   SECONDARY AND OTHER DISEASES
+========================================== */
+
+/* .other-disease-column {
+    width: 100%;
+} */
+
+.disease-card.secondary-disease {
+    border: 1px solid #f0d1a7;
+    border-top: 4px solid #e59a3a;
+    background: linear-gradient(
+        145deg,
+        #fffdf8 0%,
+        #ffffff 55%
+    );
+}
+
+.disease-card.other-disease {
+    border-top: 4px solid #29945c;
+}
+
+.secondary-disease .disease-name {
+    color: #a96a19;
+}
+
+.secondary-disease .confidence-score {
+    color: #c17b24;
+}
+
+.secondary-disease .confidence-donut {
+    background: conic-gradient(
+        #e59a3a var(--score),
+        #f4ecdf var(--score)
+    );
+}
+
+.other-disease .confidence-donut {
+    background: conic-gradient(
+        #29945c var(--score),
+        #e7eee9 var(--score)
+    );
+}
+
+/* Other disease details */
+
+.other-disease-column .disease-card {
+    height: auto;
+    padding: 18px;
+}
+
+.disease-details {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    margin-top: 14px;
+    padding-top: 13px;
+}
+
+.disease-details > * {
+    width: 100%;
+    max-width: 100%;
+}
+
+.disease-details .treatment-box,
+.disease-details .prevention-box {
+    display: block;
+    margin: 0;
+    padding: 12px 14px;
+}
+
+.disease-details .detail-title {
+    margin: 0 0 7px;
+}
+
+.disease-details .detail-text {
+    margin-bottom: 0;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   RECOMMENDATION LISTS
+========================================== */
+
+.advice-list {
+    display: block;
+    margin: 5px 0 0;
+    padding-left: 19px;
+    list-style: disc outside;
+    line-height: 1.65;
+}
+
+.advice-list li {
+    display: list-item;
+    margin: 0 0 5px;
+    padding: 0 0 0 2px;
+}
+
+.advice-list li:last-child {
+    margin-bottom: 0;
+}
+
+.treatment-box .advice-list li::marker {
+    color: #258653;
+}
+
+.prevention-box .advice-list li::marker {
+    color: #4b83b8;
+}
+
+
+/* ==========================================
+   SEVERITY SECTION
+========================================== */
+
+#severitySection {
+    margin-top: 22px;
+}
+
+#severitySection .section-heading p {
+    line-height: 1.6;
+}
+
+.severity-card {
+    padding: 19px 22px;
+}
+
+.severity-description {
+    max-width: 950px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+========================================== */
+
+@media (max-width: 767px) {
+
+    .result-notices-row {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "validation"
+            "warning";
+    }
+
+    .result-notices-row > .validation-box,
+    .result-notices-row > #predictionWarning {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .primary-disease .disease-card {
+        padding: 18px;
+    }
+
+    .primary-disease .disease-name {
+        font-size: 23px;
+    }
+
+    .primary-disease .confidence-score {
+        font-size: 27px;
+    }
+
+    .primary-disease .detail-title {
+        font-size: 15px;
+    }
+
+    .primary-disease .detail-text {
+        font-size: 14px;
+    }
+
+    .primary-disease .advice-list {
+        font-size: 13px;
+    }
+
+    .other-disease-column .disease-card {
+        padding: 16px;
+    }
+
+    .severity-card {
+        padding: 17px;
+    }
+}
+
+
+/* Smaller mobile screens */
+
+@media (max-width: 480px) {
+
+    .primary-disease .disease-name {
+        font-size: 21px;
+    }
+
+    .primary-disease .confidence-score {
+        font-size: 25px;
+    }
+
+    .primary-disease .confidence-donut {
+        width: 52px;
+        height: 52px;
+        min-width: 52px;
+    }
+
+    .primary-disease .confidence-donut::before {
+        width: 39px;
+        height: 39px;
+    }
+
+    .primary-disease .disease-card {
+        padding: 15px;
+    }
+}

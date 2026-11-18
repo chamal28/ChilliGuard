@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChilliGuard API Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        .box { border: 1px solid #ccc; padding: 20px; border-radius: 8px; background: #f9f9f9; }
+        button { background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        pre { background: #222; color: #0f0; padding: 15px; border-radius: 5px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Test API Prediction</h2>
+        <p>Select a chilli leaf image and click Predict.</p>
+        
+        <input type="file" id="imageInput" accept="image/*"><br>
+        <button onclick="predictDisease()">Predict Disease</button>
+        
+        <h3>Server Response:</h3>
+        <pre id="result">Waiting for response...</pre>
+    </div>
+
+    <script>
+        async function predictDisease() {
+            const fileInput = document.getElementById('imageInput');
+            const resultBox = document.getElementById('result');
+
+            if (fileInput.files.length === 0) {
+                alert('Please select an image first!');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('image', fileInput.files[0]);
+            formData.append('user_id', '1'); // Test user ID
+
+            resultBox.innerText = 'Processing... Please wait...';
+
+            try {
+                // Flask Server එකට Request එක යැවීම
+                const response = await fetch('http://localhost:5000/api/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+                
+                // ලැබෙන පිළිතුර ලස්සනට පෙන්වීම
+                resultBox.innerText = JSON.stringify(data, null, 4);
+
+            } catch (error) {
+                resultBox.innerText = 'Error connecting to server. Make sure Flask is running.\n\n' + error;
+            }
+        }
+    </script>
+</body>
+</html>

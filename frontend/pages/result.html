@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChilliGuard | Prediction Result</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/result.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/result-overrides.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="app-layout dashboard-layout">
+
+    <!-- Sidebar -->
+    <script src="../js/sidebar.js"></script>
+
+    <!-- Main content -->
+    <main class="main-content">
+
+        <header class="top-header">
+            <div>
+                <p class="top-header-label">CHILLIGUARD / ANALYSIS</p>
+                <h4>Prediction Results</h4>
+            </div>
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                System Active
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <!-- Page heading -->
+            <section class="page-intro">
+                <div>
+                    <span class="result-label">
+                        <i class="fas fa-leaf"></i>
+                        AI Leaf Analysis
+                    </span>
+                    <h2>Prediction Result</h2>
+                    <p class="text-muted">Chilli leaf disease detection and severity analysis</p>
+                </div>
+            </section>
+
+            <!-- Summary -->
+            <section class="result-summary mb-4">
+                <div>
+                    <p class="summary-label">ANALYSIS STATUS</p>
+                    <h3 id="resultStatus">Loading...</h3>
+                    <p id="resultMessage" class="text-muted mb-0">
+                        Preparing your results...
+                    </p>
+                </div>
+
+                <div class="summary-count">
+                    <span id="diseaseCount" class="disease-count">0 Classes</span>
+                    <div class="summary-count-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                </div>
+            </section>
+
+            <div class="result-notices-row">
+                <!-- Validation -->
+            <div class="validation-box">
+                <div class="validation-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div>
+                    <h6 class="fw-bold mb-1">Image Validation</h6>
+                    <p class="mb-0 small" id="validationText">
+                        Checking image validation...
+                    </p>
+                </div>
+            </div>
+
+                <!-- Prediction warning -->
+            <div id="predictionWarning" class="alert alert-warning d-none" role="alert">
+                <div class="d-flex align-items-start gap-3">
+                    <i class="fas fa-exclamation-triangle mt-1"></i>
+                    <div>
+                        <strong>Prediction Notice</strong>
+                        <p class="mb-0 mt-1" id="warningText"></p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            <!-- Detected diseases -->
+            <section class="mb-4">
+                <div class="section-heading mb-3">
+                    <div class="section-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div>
+                        <h4>Detected Conditions</h4>
+                        <p>Conditions meeting their individual classification thresholds</p>
+                    </div>
+                </div>
+
+                <div id="diseaseResults" class="row g-4">
+                    <div class="col-12">
+                        <p class="text-muted">Loading detected conditions...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Infection stage -->
+            <section class="severity-section mb-4" id="severitySection">
+                <div class="section-heading mb-3">
+                    <div class="section-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h4>Infection Stage</h4>
+                        <p><span id="severityDiseaseLabel">Primary detected condition</span> · Estimated disease development stage</p>
+                    </div>
+                </div>
+
+                <div class="severity-card">
+                    <div class="severity-top">
+                        <div>
+                            <p class="small text-muted mb-1">Estimated Stage</p>
+                            <h5 id="severityStage">Loading...</h5>
+                        </div>
+
+                        <span id="severityConfidence" class="severity-confidence">--</span>
+                    </div>
+
+                    <div class="severity-chart">
+                        <div class="severity-chart-labels">
+                            <span>Early</span>
+                            <span>Advanced</span>
+                        </div>
+
+                        <div class="severity-bar">
+                            <div id="severityFill" class="severity-fill"></div>
+                        </div>
+                    </div>
+
+                    <p id="severityDescription" class="severity-description mb-0"></p>
+                </div>
+            </section>
+
+            <!-- Recommendation scope note is inserted here by result.js -->
+
+            <div class="advice-notice mb-4">
+                <i class="fas fa-info-circle"></i>
+                <span>
+                    AI predictions are decision-support information, not a confirmed agricultural diagnosis.
+                    Consult a qualified agricultural officer before applying pesticides or removing large numbers of plants.
+                </span>
+            </div>
+
+            <!-- Actions -->
+            <div class="result-actions">
+                <a href="detect.html" class="btn btn-success" id="newDetection">
+                    <i class="fas fa-plus me-2"></i>
+                    New Detection
+                </a>
+
+                <a href="history.html" class="btn btn-outline-secondary">
+                    <i class="fas fa-history me-2"></i>
+                    View History
+                </a>
+
+                <a href="dashboard.html" class="btn btn-outline-success">
+                    <i class="fas fa-th-large me-2"></i>
+                    Dashboard
+                </a>
+            </div>
+
+            <footer class="page-footer">
+                ChilliGuard – AI-powered Chilli Leaf Disease Detection
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../js/result.js"></script>
+</body>
+</html>

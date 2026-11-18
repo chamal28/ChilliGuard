@@ -1,0 +1,21 @@
+
+/* Small offline icon fallbacks for the login and registration pages. */
+.auth-page .fas, .auth-page .far {
+    display: inline-block;
+    min-width: .9em;
+    font-family: Arial, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+.auth-page .fa-leaf::before { content: "❧"; }
+.auth-page .fa-check-circle::before { content: "✓"; }
+.auth-page .fa-envelope::before { content: "✉"; }
+.auth-page .fa-lock::before { content: "▣"; }
+.auth-page .fa-sign-in-alt::before { content: "➜"; }
+.auth-page .fa-user::before { content: "●"; }
+.auth-page .fa-phone::before { content: "☎"; }
+.auth-page .fa-map-marker-alt::before { content: "⌖"; }
+.auth-page .fa-shield-alt::before { content: "◆"; }
+.auth-page .fa-user-plus::before { content: "+"; }

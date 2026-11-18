@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChilliGuard | Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+    <div class="dashboard-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+        <script src="../js/sidebar.js"></script>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOP HEADER -->
+            <header class="top-header">
+
+                <div class="header-left">
+                    <div class="header-page-title">
+                        <h5>Dashboard</h5>
+                        <p>Monitor your chilli leaf health records</p>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="header-status">
+                        <span class="status-dot"></span>
+                        System Active
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <div class="content-area">
+
+                <!-- WELCOME SECTION -->
+                <section class="welcome-section">
+
+                    <div class="welcome-content">
+
+                        <span class="welcome-label">
+                            FARMER DASHBOARD
+                        </span>
+
+                        <h2 id="welcomeMessage">
+                            Welcome!
+                        </h2>
+
+                        <p>
+                            Here's an overview of your chilli leaf
+                            health records and recent activities.
+                        </p>
+
+                    </div>
+
+                    <div class="welcome-action">
+
+                        <a href="detect.html"
+                           class="btn-new-detection">
+
+                            <i class="fas fa-camera"></i>
+                            <span>New Detection</span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ERROR MESSAGE -->
+                <div id="dashboardError"
+                     class="alert alert-danger d-none"
+                     role="alert">
+                </div>
+
+
+                <!-- STATISTICS SECTION -->
+                <section class="statistics-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h4>Overview</h4>
+                            <p>Your chilli leaf detection statistics</p>
+                        </div>
+                    </div>
+
+
+                    <div class="statistics-grid">
+
+                        <!-- TOTAL SCANS -->
+                        <div class="stat-card">
+
+                            <div class="stat-card-top">
+                                <div class="stat-icon icon-green">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+
+                                <span class="stat-category">
+                                    ALL TIME
+                                </span>
+                            </div>
+
+                            <div class="stat-info">
+                                <h3 id="totalScans">0</h3>
+                                <p>Total Scans</p>
+                            </div>
+
+                        </div>
+
+
+                        <!-- DISEASE DETECTED -->
+                        <div class="stat-card">
+
+                            <div class="stat-card-top">
+                                <div class="stat-icon icon-red">
+                                    <i class="fas fa-virus"></i>
+                                </div>
+
+                                <span class="stat-category">
+                                    ALL TIME
+                                </span>
+                            </div>
+
+                            <div class="stat-info">
+                                <h3 id="diseaseScans">0</h3>
+                                <p>Diseases Detected</p>
+                            </div>
+
+                        </div>
+
+
+                        <!-- HEALTHY LEAVES -->
+                        <div class="stat-card">
+
+                            <div class="stat-card-top">
+                                <div class="stat-icon icon-green">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+
+                                <span class="stat-category">
+                                    ALL TIME
+                                </span>
+                            </div>
+
+                            <div class="stat-info">
+                                <h3 id="healthyScans">0</h3>
+                                <p>Healthy Results</p>
+                            </div>
+
+                        </div>
+
+
+                        <!-- MONTHLY SCANS -->
+                        <div class="stat-card">
+
+                            <div class="stat-card-top">
+                                <div class="stat-icon icon-blue">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+
+                                <span class="stat-category">
+                                    THIS MONTH
+                                </span>
+                            </div>
+
+                            <div class="stat-info">
+                                <h3 id="monthlyScans">0</h3>
+                                <p>Scans This Month</p>
+                            </div>
+
+                        </div>
+
+
+                        <!-- MONTHLY DISEASE SCANS -->
+                        <div class="stat-card">
+
+                            <div class="stat-card-top">
+                                <div class="stat-icon icon-orange">
+                                    <i class="fas fa-microscope"></i>
+                                </div>
+
+                                <span class="stat-category">
+                                    THIS MONTH
+                                </span>
+                            </div>
+
+                            <div class="stat-info">
+                                <h3 id="monthlyDiseaseScans">0</h3>
+                                <p>Diseases This Month</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- RECENT DETECTIONS -->
+                <section class="recent-section">
+
+                    <div class="recent-section-header">
+
+                        <div class="section-heading">
+                            <div>
+                                <h4>Recent Detections</h4>
+                                <p>Your latest chilli leaf analysis results</p>
+                            </div>
+                        </div>
+
+                        <a href="history.html"
+                           class="view-all-btn">
+                            View All
+                            <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="recent-table-wrapper">
+
+                        <div class="table-responsive">
+
+                            <table class="table detection-table mb-0">
+
+                                <thead>
+                                    <tr>
+                                        <th>IMAGE</th>
+                                        <th>DISEASE</th>
+                                        <th>SEVERITY</th>
+                                        <th>DATE</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="recentDetections">
+
+                                    <tr>
+                                        <td colspan="4"
+                                            class="text-center py-5 text-muted">
+                                            <i class="fas fa-spinner fa-spin me-2"></i>
+                                            Loading predictions...
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- FOOTER -->
+                <footer class="dashboard-footer">
+                    <p>
+                        © 2026 ChilliGuard.
+                        Lightweight AI for healthier chilli cultivation.
+                    </p>
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="../js/bootstrap.bundle.min.js"></script>
+
+<!-- Dashboard JavaScript -->
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>
