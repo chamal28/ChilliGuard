@@ -25,7 +25,7 @@ backend/.chilliguard_secret
 backend/uploads/
 
 # Original dataset (large files)
-dataset/
+/dataset/raw/
 
 # Backup files and folders
 **/backups/
