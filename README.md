@@ -274,9 +274,9 @@ The research also considers the challenges of real-world image variation and the
 
 ## Author
 
-**Chamalka Ranathunga**
+**Chamalka Nethmini Ranathungage**
 
-BSc (Hons) Computing – Software Engineering Top-up
+BSc (Hons) Software Engineering Top-up
 
 Research Project: ChilliGuard
 
