@@ -276,7 +276,7 @@ The research also considers the challenges of real-world image variation and the
 
 **Chamalka Nethmini Ranathungage**
 
-BSc (Hons) Software Engineering Top-up
+BEng (Hons) Software Engineering Top-up
 
 Research Project: ChilliGuard
 
